@@ -1,0 +1,40 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+
+    int[] carte = { 31, 40 , 50, 70, 90 };
+    int n = carte.Length; // Calculer  la taille du tableau carte
+    int[] titre = new int[n]; // Definir la taille du deuxième tableau
+    int[] cartetitre = new int[2*n]; // Definir la taille du troisieme tableau 
+    for(int i = 0; i < n; i++)
+    {
+      titre[i] = carte[i] - 20; // Ajout de valeurs dans le tableau titre à partir du tableau carte
+    }
+
+    for(int i = 0; i < n; i++)
+    {
+      cartetitre[i] = carte[i]; // Copier-coller de valeurs dans le tableau cartetitre à partir du tableau carte
+    }
+    int t = 0;
+    for(int i = n; i < 2*n; i++)
+    {
+      cartetitre[i] = titre[t]; // La suite du Copier-coller de valeurs dans le tableau cartetitre à partir du tableau titre
+      t = t + 1;
+    }
+    for(int i = 0; i < n; i++)
+    {
+      Console.Write(carte[i] + ", "); // Affichage tableau carte
+    }
+    Console.WriteLine();
+    for(int i = 0; i < n; i++)
+    {
+      Console.Write (titre[i] + ", "); // Affichage tableau titre
+    }
+    Console.WriteLine();
+    for(int i = 0; i < 2*n; i++)
+    {
+      Console.Write (cartetitre[i] + ", "); // Affichage tableau cartetitre
+    }
+  }
+}
