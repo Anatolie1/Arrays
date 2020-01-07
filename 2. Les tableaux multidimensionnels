@@ -1,0 +1,27 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+
+    int[,] uniform = {{1, 2, 3}, {2, 3, 4}, {3, 4, 5}};
+    int[][] irregulier = new int[3][];
+
+    for (int i = 0; i < 3; i++)
+    {
+      irregulier[i] = new int[3-i]; // Creation du deuxième valeur du tableau bidimensionnel
+    }
+    int n = 3; // Valeur n permetante de reduire deuxième valeur du tableau bidimensionnel 
+    for (int i = 0; i < 3; i++)
+    {
+      int t = i; // Valeur t permetante d'inserer (dans le tableau irregulier) la valeur suivante du tableau uniform 
+      for (int j = 0; j < n; j++)
+      {
+        irregulier[i][j] = uniform[i,t];
+        Console.Write(irregulier[i][j] + " ");
+        t++;
+      }
+      n = n - 1;
+      Console.WriteLine();
+    }
+  }
+}
